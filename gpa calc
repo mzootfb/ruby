@@ -1,0 +1,68 @@
+#Make grades array
+grades = []
+credits = []
+multi = []
+
+
+
+#Ask for grade input
+puts "Enter your grade: "
+grades << gets.chomp.downcase
+puts "Enter credit hours"
+credits << gets.chomp.to_i
+
+
+#Ask for further grades
+puts "Do you have more grades?"
+answer = gets.chomp.downcase
+
+
+#Ask Grade Loop based on answer
+ until answer == "no"
+
+ 	puts "Enter grade"
+ 	grades << gets.chomp.downcase
+ 	puts "Enter credit hours"
+	credits << gets.chomp.to_i
+	puts "Do you have more grades?"
+ 	answer = gets.chomp.downcase
+ 	
+ end
+c_sum = 0
+credits.each do |credit|
+c_sum += credit
+end
+
+ #Grades array iteration
+count = -1
+grades.each do |grade|
+count += 1
+	if grade == "a"
+		multi << 4*credits[count]
+	elsif grade == "b"
+		multi << 3*credits[count]
+	elsif grade == "c"
+		multi << 2*credits[count]
+	elsif grade == "d"
+		multi << 1*credits[count]
+	elsif grade == "f"
+		multi << 0*credits[count]
+	end
+end
+
+
+
+sum = 0
+multi.each do |products|
+	sum += products
+end
+
+print "This is your GPA: "
+non_round_gpa = sum  / c_sum.to_f
+gpa = (non_round_gpa * 100.00).round / 100.0
+print gpa
+
+ #Grades sum calculation
+
+
+
