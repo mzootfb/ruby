@@ -2,9 +2,10 @@ print "Enter the amount of decimals you would like from pi: "
 decimal_count = gets.strip.to_i
 
 if decimal_count > 100
-  puts "John Machin used this formula to generate pi to 100 decimal places. We're not going further than that"
+  puts "Less than 100 please"
 else
   pi = (4 * (4 * Math.atan(1.0/5.0) - Math.atan(1.0/239.0)))
+  print "\n"
   printf("%.#{decimal_count}f", pi)
   print "\n"
 end
